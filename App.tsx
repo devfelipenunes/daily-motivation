@@ -7,7 +7,12 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { Platform } from "react-native";
 
+import { createStackNavigator } from "@react-navigation/stack";
+
 import * as Device from "expo-device";
+import { Favoritos } from "./src/screens/Favoritos";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { Edit } from "./src/screens/Edit";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -22,6 +27,7 @@ export default function App() {
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
   const responseListener = useRef();
+  const Stack = createStackNavigator();
 
   useEffect(() => {
     registerForPushNotificationsAsync().then((token) =>
@@ -48,7 +54,19 @@ export default function App() {
 
   return (
     <>
-      <Home />
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Favoritos" component={Favoritos} />
+          <Stack.Screen name="Edit" component={Edit} />
+        </Stack.Navigator>
+      </NavigationContainer>
+
+      {/* <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Settings" component={Favoritos} />
+      </Tab.Navigator> */}
+      {/* <Home /> */}
     </>
   );
 }
