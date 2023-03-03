@@ -58,26 +58,3 @@ export async function registerForPushNotificationsAsync() {
   }
   return token;
 }
-
-const setToken = async (value) => {
-  try {
-    await AsyncStorage.setItem("@mentalize", value);
-  } catch (error) {}
-};
-
-export const favorite = async (value) => {
-  try {
-    await AsyncStorage.setItem("@favorite", value);
-  } catch (error) {}
-};
-
-// export const setUser = async (email, id) => {
-//   const user = {
-//     id: id,
-//     email: email,
-//   };
-
-//   try {
-//     await AsyncStorage.setItem("@mentalize", JSON.stringify(user));
-//   } catch (error) {}
-// };

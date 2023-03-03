@@ -1,20 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import ViewShot from "react-native-view-shot";
 import Toast from "react-native-toast-message";
-import { Image, ImageBackground } from "react-native";
-// import * as Permissions from "expo-permissions";
-import * as MediaLibrary from "expo-media-library";
-import { useEffect, useRef, useState } from "react";
-
+import * as Permissions from "expo-permissions";
 import { dados } from "../../services/frases.json";
-
+import * as MediaLibrary from "expo-media-library";
+import * as Notifications from "expo-notifications";
+import { useEffect, useRef, useState } from "react";
+import { Image, ImageBackground } from "react-native";
 import { Landscape } from "../../components/Landscape";
 import { ButtonPrint } from "../../components/ButtonPrint";
 import { CardMotivation } from "../../components/CardMotivation";
 import { copyToClipboard, getRandomObjectOfTheDay } from "../../utils";
-
-import * as Notifications from "expo-notifications";
-import * as Permissions from "expo-permissions";
 
 export function Home({ navigation }) {
   const dado = getRandomObjectOfTheDay(dados);
