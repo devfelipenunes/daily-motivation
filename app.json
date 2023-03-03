@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "mentalize",
+    "name": "Mentalize",
     "slug": "daily-motivation",
+    "scheme": "daily-motivation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -42,7 +43,18 @@
           "photosPermission": "The app accesses your photos to let you share them with your friends.",
           "savePhotosPermission": "Allow to save photos."
         }
+        
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./local/path/to/myNotificationIcon.png",
+          "color": "#ffffff",
+          "sounds": ["./local/path/to/mySound.wav", "./local/path/to/myOtherSound.wav"],
+          "mode": "production"
+        }
       ]
+      
     ]
   }
 }

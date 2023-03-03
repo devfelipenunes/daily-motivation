@@ -1,13 +1,14 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { Feather } from "@expo/vector-icons";
+import { IButtonPrint } from "../../Interfaces/IHome";
 
-export function ButtonPrint({ handlePrint, iconColor }) {
+export function ButtonPrint({ handlePrint, iconColor }: IButtonPrint) {
   return (
     <View>
       <TouchableOpacity
         style={{
-          top: 270,
+          top: 200,
           justifyContent: "center",
           alignItems: "center",
         }}

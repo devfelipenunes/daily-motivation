@@ -1,19 +1,9 @@
-import Slider from "@react-native-community/slider";
-import React, { useEffect, useRef, useState } from "react";
-import { ImageBackground, Text, View } from "react-native";
+import React from "react";
 import Draggable from "react-native-draggable";
+import { ICardEdit } from "../../Interfaces/IEdit";
+import { ImageBackground, Text, View } from "react-native";
 
-import { PinchGestureHandler, State } from "react-native-gesture-handler";
-
-interface Props {
-  frase: string;
-  autor: string;
-  image: string;
-}
-
-export function CardEdit({ frase, autor, image }: Props) {
-  const imageRef = useRef(null);
-
+export function CardEdit({ frase, autor, image, imageRef }: ICardEdit) {
   return (
     <View collapsable={false}>
       <ImageBackground
@@ -23,7 +13,7 @@ export function CardEdit({ frase, autor, image }: Props) {
           width: 350,
           height: 350,
           borderRadius: 25,
-          backgroundColor: "white",
+          backgroundColor: "#fff1ff",
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -41,14 +31,14 @@ export function CardEdit({ frase, autor, image }: Props) {
             <Text
               style={{
                 color: "#FD9B52",
-                fontSize: 16,
+                fontSize: 20,
                 marginBottom: 10,
                 width: 300,
               }}
             >
               {frase}
             </Text>
-            <Text style={{ fontSize: 10, color: "#FD9B52" }}>{autor}</Text>
+            <Text style={{ color: "#FD9B52" }}>{autor}</Text>
           </Draggable>
         </View>
       </ImageBackground>

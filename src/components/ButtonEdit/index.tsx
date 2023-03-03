@@ -37,7 +37,7 @@ export function ButtonEdit({ saveImage, pickImage }: Props) {
       >
         <FontAwesome5 name="edit" size={18} color="white" />
         <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-          Editar
+          Galeria
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
