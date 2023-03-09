@@ -14,7 +14,8 @@ import { copyToClipboard, getRandomObjectOfTheDay } from "../../utils";
 
 export function Home({ navigation }) {
   const dado = getRandomObjectOfTheDay(dados);
-  console.log(dado);
+
+  // const dado = { frase: "aqa", autor: "Aqi" };
 
   const viewShotRef = useRef();
   const [sol, setSol] = useState(false);
@@ -27,16 +28,14 @@ export function Home({ navigation }) {
         data: { data: "goes here" },
       },
       trigger: {
-        hour: 17,
-        minute: 32,
+        hour: 14,
+        // minute: ,
         repeats: true,
       },
     });
   }
 
-  useEffect(() => {
-    schedulePushNotification();
-  }, []);
+  schedulePushNotification();
 
   function handleColor() {
     setSol(!sol);
